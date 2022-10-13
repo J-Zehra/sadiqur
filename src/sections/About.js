@@ -1,4 +1,4 @@
-import { Flex } from '@chakra-ui/react'
+import { Flex, Text } from '@chakra-ui/react'
 import { useInView } from 'framer-motion';
 import React, { useContext, useEffect, useRef } from 'react'
 import { ApplicationContext } from '../context/AppContext';
@@ -23,12 +23,16 @@ export const About = () => {
 
     return (
         <Flex
+            id='about'
             h='100vh'
             justifyContent='center'
             alignItems='center'
             ref={ref}
         >
-            About
+            <Text textAlign='center'>
+            Hero
+
+            </Text>
         </Flex>
     )
 }

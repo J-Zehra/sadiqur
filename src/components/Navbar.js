@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Link, useMediaQuery } from '@chakra-ui/react'
+import { Box, Button, Flex, Image, Link, useMediaQuery } from '@chakra-ui/react'
 import React, { useContext } from 'react'
 import { ApplicationContext } from '../context/AppContext'
 
@@ -27,6 +27,12 @@ export const Navbar = () => {
         fontWeight: 'bold',
     }
 
+    const activeContactStyle = {
+        bg: 'palette.accent',
+        color: 'palette.tertiary'
+    }
+
+
     return (
         <Box
             w='100%'
@@ -49,7 +55,7 @@ export const Navbar = () => {
             >
                 {/* LOGO */}
                 <Link
-                    href='#home'
+                    href='#hero'
                 >
                     <Image
                         transition='all .3s ease'
@@ -62,45 +68,72 @@ export const Navbar = () => {
                 {isSmallerThan850 ? (
                     <MobileMenu />
                 ) : (
-                    <Flex
-                        alignItems='center'
-                        gap='3rem'
-                    >
-                        {navLinks.map((nav, index) => {
-                            return (
-                                <Link
-                                    display='flex'
-                                    justifyContent='center'
-                                    key={index}
-                                    href={nav.link}
-                                    transition='all .3s ease'
-                                    fontSize={scrolled && '.95rem'}
-                                    pos='relative'
-                                    {...activeNav === index && activeNavStyle}
-                                    _hover={{
-                                        color: 'palette.accent'
-                                    }}
+                    <>
+                        <Flex
+                            alignItems='center'
+                            justifyContent='center'
+                            gap='3rem'
+                        >
+                            {navLinks.map((nav, index) => {
+                                return (
+                                    <Link
+                                        display='flex'
+                                        justifyContent='center'
+                                        alignItems='center'
+                                        key={index}
+                                        href={nav.link}
+                                        transition='all .3s ease'
+                                        fontSize={scrolled && '.95rem'}
+                                        pos='relative'
+                                        {...activeNav === index && activeNavStyle}
+                                        _hover={{
+                                            color: 'palette.accent'
+                                        }}
 
-                                    as={motion.a}
-                                    variants={item}
-                                >
-                                    {nav.label}
-                                    {activeNav === index && (
-                                        <Box
-                                            pos='absolute'
-                                            bottom='-.6rem'
-                                            w='.5rem'
-                                            h='.5rem'
-                                            borderRadius='50%'
-                                            bg='palette.accent'
-                                            as={motion.div}
-                                            layoutId
-                                        />
-                                    )}
-                                </Link>
-                            )
-                        })}
-                    </Flex>
+                                        as={motion.a}
+                                        variants={item}
+                                    >
+                                        {nav.label}
+                                        {activeNav === index && (
+                                            <Box
+                                                pos='absolute'
+                                                bottom='-.6rem'
+                                                w='.5rem'
+                                                h='.5rem'
+                                                borderRadius='50%'
+                                                bg='palette.accent'
+                                                as={motion.div}
+                                                layoutId
+                                            />
+                                        )}
+                                    </Link>
+                                )
+                            })}
+                        </Flex>
+                        {/* Contact */}
+                        <Flex
+                            as={motion.div}
+                            variants={item}
+                        >
+                            <Button
+                                bg='transparent'
+                                color='palette.accent'
+                                border='1px solid'
+                                borderColor='palette.accent'
+                                transition='all .3s ease'
+                                fontSize={scrolled ? '.9rem' : '.95rem'}
+                                as='a'
+                                href='#contact'
+                                {...activeNav === 3 && activeContactStyle}
+                                _hover={{
+                                    bg: 'palette.accent',
+                                    color: 'palette.tertiary'
+                                }}
+                            >
+                                Contact
+                            </Button>
+                        </Flex>
+                    </>
                 )}
             </Flex>
         </Box>

@@ -23,6 +23,7 @@ export const Hero = () => {
 
     return (
         <Flex
+            id='hero'
             h='100vh'
             justifyContent='center'
             alignItems='center'
