@@ -23,6 +23,7 @@ export const Portfolio = () => {
 
     return (
         <Flex
+            id='portfolio'
             h='100vh'
             justifyContent='center'
             alignItems='center'
