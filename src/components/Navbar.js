@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Image, Link, useMediaQuery } from '@chakra-ui/react'
+import { Box, Flex, Image, Link, useMediaQuery } from '@chakra-ui/react'
 import React, { useContext } from 'react'
 import { ApplicationContext } from '../context/AppContext'
 
