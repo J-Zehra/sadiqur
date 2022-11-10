@@ -3,15 +3,15 @@ import { extendTheme } from "@chakra-ui/react"
 
 const colors = {
     palette: {
-        primary: '#293241',
-        secondary: '#252D3C',
-        tertiary: '#E0FBFC',
-        accent: '#3D5A80'
+        primary: '#191919',
+        secondary: '#EDEDED',
+        tertiary: '#EDEDED',
+        accent: '#DB8DFF'
     }
 }
 
 const fonts = {
-    body: `'Poppins', sans-serif`
+    body: `'Nunito', sans-serif`
 }
 
 const styles = {

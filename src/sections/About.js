@@ -28,6 +28,7 @@ export const About = () => {
             justifyContent='center'
             alignItems='center'
             ref={ref}
+            zIndex='-1'
         >
             <Text textAlign='center'>
             Hero

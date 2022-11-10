@@ -3,7 +3,7 @@ import { useInView } from 'framer-motion';
 import React, { useContext, useEffect, useRef } from 'react'
 import { ApplicationContext } from '../context/AppContext';
 
-export const Portfolio = () => {
+export const Skills = () => {
 
     // GET THE STATES FROM THE CONTEXT
     const { setActiveNav } = useContext(ApplicationContext)
@@ -17,13 +17,13 @@ export const Portfolio = () => {
     // SET THE ACTIVE NAV TO BE THE INDEX 0 WHEN THIS COMPONENT IS VISIBLE ON THE SCREEN
     useEffect(() => {
         if (isInView) {
-            setActiveNav(3);
+            setActiveNav(2);
         }
     }, [isInView, setActiveNav])
 
     return (
         <Flex
-            id='portfolio'
+            id='skills'
             h='100vh'
             justifyContent='center'
             alignItems='center'

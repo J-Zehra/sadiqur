@@ -17,8 +17,9 @@ export const Navbar = () => {
 
     // INITIALIZE THE ARRAY OF NAV LINKS TO BE MAPPED
     const navLinks = [
-        { link: '#home', label: 'Home' },
+        { link: '#hero', label: 'Home' },
         { link: '#about', label: 'About' },
+        { link: '#skills', label: 'Skills' },
         { link: '#portfolio', label: 'Portfolio' },
     ]
 
@@ -27,18 +28,15 @@ export const Navbar = () => {
         fontWeight: 'bold',
     }
 
-    const activeContactStyle = {
-        bg: 'palette.accent',
-        color: 'palette.tertiary'
-    }
-
-
     return (
         <Box
             w='100%'
-            h='5rem'
+            transition='all .2s ease'
+            h={scrolled ? '4.9rem' : '5rem'}
             pos='fixed'
-            zIndex='999'
+            zIndex='100'
+            backdropFilter='blur(15px)'
+            boxShadow={scrolled && '0 0 10px rgba(0, 0, 0, .2)'}
         >
             <Flex
                 w={{
@@ -59,7 +57,7 @@ export const Navbar = () => {
                 >
                     <Image
                         transition='all .3s ease'
-                        w={scrolled ? '2.4rem' : '2.5rem'}
+                        w={scrolled ? '5.9rem' : '6rem'}
                         src={Logo}
                     />
                 </Link>
@@ -82,9 +80,10 @@ export const Navbar = () => {
                                         alignItems='center'
                                         key={index}
                                         href={nav.link}
-                                        transition='all .3s ease'
-                                        fontSize={scrolled && '.95rem'}
+                                        transition='all .2s ease'
+                                        fontSize={scrolled && '.99rem'}
                                         pos='relative'
+                                        fontWeight='400'
                                         {...activeNav === index && activeNavStyle}
                                         _hover={{
                                             color: 'palette.accent'
@@ -109,29 +108,6 @@ export const Navbar = () => {
                                     </Link>
                                 )
                             })}
-                        </Flex>
-                        {/* Contact */}
-                        <Flex
-                            as={motion.div}
-                            variants={item}
-                        >
-                            <Button
-                                bg='transparent'
-                                color='palette.accent'
-                                border='1px solid'
-                                borderColor='palette.accent'
-                                transition='all .3s ease'
-                                fontSize={scrolled ? '.9rem' : '.95rem'}
-                                as='a'
-                                href='#contact'
-                                {...activeNav === 3 && activeContactStyle}
-                                _hover={{
-                                    bg: 'palette.accent',
-                                    color: 'palette.tertiary'
-                                }}
-                            >
-                                Contact
-                            </Button>
                         </Flex>
                     </>
                 )}
