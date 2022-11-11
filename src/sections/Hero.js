@@ -1,7 +1,10 @@
-import { Flex } from '@chakra-ui/react'
+import { Box, Flex, Image, Text } from '@chakra-ui/react'
 import { useInView } from 'framer-motion';
 import React, { useContext, useEffect, useRef } from 'react'
+import { HeroButton } from '../components/HeroButton';
 import { ApplicationContext } from '../context/AppContext';
+import { allBreakpoints } from '../miscellaneous/breakpoints';
+import ProfilePic from '../assets/ProfilePic.png'
 
 export const Hero = () => {
 
@@ -29,7 +32,44 @@ export const Hero = () => {
             alignItems='center'
             ref={ref}
         >
-            Hero
+            <Flex
+                w={allBreakpoints}
+                margin='auto'
+                justifyContent='space-between'
+                alignItems='center'
+            >
+                {/* LEFT */}
+                <Flex
+                    flexDir='column'
+                >
+                    <Text
+                        as='h5'
+                    >
+                        Hi, I am Sadiqur Sakib,
+                    </Text>
+                    <Text
+                        as='h1'
+                    >
+                        Aspiring Developer.
+                    </Text>
+                    <Text
+                        width='70%'
+                        as='h5'
+                        fontWeight='semibold'
+                    >
+                        CUNY Baruch College Undergraduate College Student Majoring In Computer Information Systems Located In New York City.
+                    </Text>
+                    <HeroButton/>
+                </Flex>
+
+                {/* RIGHT */}
+                <Box>
+                    <Image 
+                        src={ProfilePic}
+                        w='40rem'
+                    />
+                </Box>
+            </Flex>
         </Flex>
     )
 }

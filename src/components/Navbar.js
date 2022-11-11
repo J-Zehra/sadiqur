@@ -6,6 +6,7 @@ import Logo from '../assets/Logo.png'
 import { MobileMenu } from './MobileMenu'
 import { motion } from 'framer-motion'
 import { item } from '../miscellaneous/motionVariants'
+import { allBreakpoints } from '../miscellaneous/breakpoints'
 
 export const Navbar = () => {
 
@@ -35,17 +36,11 @@ export const Navbar = () => {
             h={scrolled ? '4.9rem' : '5rem'}
             pos='fixed'
             zIndex='100'
-            backdropFilter='blur(15px)'
+            backdropFilter={scrolled && 'blur(15px)'}
             boxShadow={scrolled && '0 0 10px rgba(0, 0, 0, .2)'}
         >
             <Flex
-                w={{
-                    base: '95%',
-                    sm: '90%',
-                    lg: '85%',
-                    xl: '80%',
-                    '2xl': '75%',
-                }}
+                w={allBreakpoints}
                 h='100%'
                 margin='auto'
                 alignItems='center'

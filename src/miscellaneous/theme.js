@@ -28,6 +28,16 @@ const styles = {
             color: 'rgba(38, 50, 56, .6)',
             fontSize: '.9rem'
         },
+        h1: {
+            fontSize: '4rem',
+            fontWeight: 'bold',
+            background: 'linear-gradient(to right, #C41DFF, #DC8AF9)',
+            backgroundClip: 'text',
+        },
+        h5:{
+            background: 'linear-gradient(to right, #BBBBBB, white)',
+            backgroundClip: 'text',
+        }
     }
 }
 
