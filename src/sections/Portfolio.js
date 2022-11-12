@@ -1,7 +1,9 @@
 import { Flex } from '@chakra-ui/react'
 import { useInView } from 'framer-motion';
 import React, { useContext, useEffect, useRef } from 'react'
+import { SectionTitle } from '../components/SectionTitle';
 import { ApplicationContext } from '../context/AppContext';
+import { allBreakpoints } from '../miscellaneous/breakpoints';
 
 export const Portfolio = () => {
 
@@ -24,12 +26,21 @@ export const Portfolio = () => {
     return (
         <Flex
             id='portfolio'
+            // paddingBlock='5rem'
             h='100vh'
             justifyContent='center'
             alignItems='center'
             ref={ref}
+            bg='#181818'
         >
-            Portfolio
+            <Flex
+                w={allBreakpoints}
+                margin='auto'
+                justifyContent='center'
+                alignItems='center'
+            >
+                <SectionTitle title={'Portfolio'} />
+            </Flex>
         </Flex>
     )
 }

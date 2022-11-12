@@ -1,7 +1,9 @@
-import { Flex, Text } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 import { useInView } from 'framer-motion';
 import React, { useContext, useEffect, useRef } from 'react'
+import { SectionTitle } from '../components/SectionTitle';
 import { ApplicationContext } from '../context/AppContext';
+import { allBreakpoints } from '../miscellaneous/breakpoints';
 
 export const About = () => {
 
@@ -24,16 +26,21 @@ export const About = () => {
     return (
         <Flex
             id='about'
-            h='100vh'
             justifyContent='center'
             alignItems='center'
             ref={ref}
             zIndex='-1'
+            bg='#181818'
+            paddingBlock='5rem'
         >
-            <Text textAlign='center'>
-            Hero
-
-            </Text>
+            <Flex
+                w={allBreakpoints}
+                margin='auto'
+                justifyContent='center'
+                alignItems='center'
+            >
+                <SectionTitle title={'About Me'}/>
+            </Flex>
         </Flex>
     )
 }

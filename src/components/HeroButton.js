@@ -14,6 +14,8 @@ export const HeroButton = () => {
             _hover={{}}
             pos='relative'
             _active={{}}
+            as='a'
+            href='#contact'
             leftIcon={
                 <Box
                     fontSize='3.5rem'

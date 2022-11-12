@@ -22,6 +22,8 @@ export const BackgroundElement = () => {
             right='0'
             zIndex='-1'
             src={BgElement}
+            w='30%'
+            h='100vh'
         />
     )
 }

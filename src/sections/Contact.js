@@ -5,7 +5,7 @@ import { SectionTitle } from '../components/SectionTitle';
 import { ApplicationContext } from '../context/AppContext';
 import { allBreakpoints } from '../miscellaneous/breakpoints';
 
-export const Skills = () => {
+export const Contact = () => {
 
     // GET THE STATES FROM THE CONTEXT
     const { setActiveNav } = useContext(ApplicationContext)
@@ -19,18 +19,18 @@ export const Skills = () => {
     // SET THE ACTIVE NAV TO BE THE INDEX 0 WHEN THIS COMPONENT IS VISIBLE ON THE SCREEN
     useEffect(() => {
         if (isInView) {
-            setActiveNav(2);
+            setActiveNav(null);
         }
     }, [isInView, setActiveNav])
 
     return (
         <Flex
-            id='skills'
+            id='contact'
+            // paddingBlock='5rem'
+            h='100vh'
             justifyContent='center'
             alignItems='center'
             ref={ref}
-            // paddingBlock='5rem'
-            h='100vh'
         >
             <Flex
                 w={allBreakpoints}
@@ -38,7 +38,7 @@ export const Skills = () => {
                 justifyContent='center'
                 alignItems='center'
             >
-                <SectionTitle title={'Skills'} />
+                <SectionTitle title={"Let's get in touch"} />
             </Flex>
         </Flex>
     )
