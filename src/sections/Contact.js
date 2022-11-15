@@ -1,6 +1,7 @@
 import { Flex } from '@chakra-ui/react'
 import { useInView } from 'framer-motion';
 import React, { useContext, useEffect, useRef } from 'react'
+import { ContactForm } from '../components/ContactForm';
 import { SectionTitle } from '../components/SectionTitle';
 import { ApplicationContext } from '../context/AppContext';
 import { allBreakpoints } from '../miscellaneous/breakpoints';
@@ -26,8 +27,7 @@ export const Contact = () => {
     return (
         <Flex
             id='contact'
-            // paddingBlock='5rem'
-            h='100vh'
+            paddingBlock='5rem'
             justifyContent='center'
             alignItems='center'
             ref={ref}
@@ -37,8 +37,11 @@ export const Contact = () => {
                 margin='auto'
                 justifyContent='center'
                 alignItems='center'
+                flexDir='column'
+                gap='8rem'
             >
                 <SectionTitle title={"Let's get in touch"} />
+                <ContactForm/>
             </Flex>
         </Flex>
     )
