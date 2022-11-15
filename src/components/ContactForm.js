@@ -1,5 +1,6 @@
 import { Button, Flex, Input, Textarea } from '@chakra-ui/react'
 import React from 'react'
+import { Socials } from './Socials'
 
 export const ContactForm = () => {
     return (
@@ -97,6 +98,7 @@ export const ContactForm = () => {
             >
                 Send Message
             </Button>
+            <Socials/>
         </Flex>
     )
 }
