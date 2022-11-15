@@ -15,6 +15,7 @@ export const MobileMenu = () => {
             pos='relative'
             justifyContent='center'
             alignItems='center'
+            color={toggled ? 'palette.primary' : 'palette.secondary'}
         >
             <AnimatePresence exitBeforeEnter>
                 {toggled ? (

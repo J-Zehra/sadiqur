@@ -3,6 +3,7 @@ import React, { useContext } from 'react'
 import { ApplicationContext } from '../context/AppContext'
 
 import Logo from '../assets/Logo.png'
+import Logo2 from '../assets/logo2.png'
 import { MobileMenu } from './MobileMenu'
 import { motion } from 'framer-motion'
 import { item } from '../miscellaneous/motionVariants'
@@ -11,7 +12,7 @@ import { allBreakpoints } from '../miscellaneous/breakpoints'
 export const Navbar = () => {
 
     // GET THE STATES FROM THE CONTEXT
-    const { scrolled, activeNav } = useContext(ApplicationContext)
+    const { scrolled, activeNav, toggled } = useContext(ApplicationContext)
 
     // TRACK SCREEN SIZE TO ADJUST THE NAV APPEARANCE
     const [isSmallerThan850] = useMediaQuery('(max-width: 850px)')
@@ -53,7 +54,7 @@ export const Navbar = () => {
                     <Image
                         transition='all .3s ease'
                         w={scrolled ? '5.9rem' : '6rem'}
-                        src={Logo}
+                        src={toggled ? Logo2 : Logo}
                     />
                 </Link>
 

@@ -74,7 +74,10 @@ export const Portfolio = () => {
                             >
                                 <AspectRatio
                                     ratio={16 / 9}
-                                    w='26rem'
+                                    w={{
+                                        base: '90vw',
+                                        md: '26rem'
+                                    }}
                                 >
                                     <Image
                                         src={project.image}

@@ -14,13 +14,22 @@ export const Statistics = () => {
             w='100%'
             justifyContent='center'
             alignItems='center'
-            gap='5rem'
+            gap={{
+                base: '2rem',
+                md: '5rem'
+            }}
         >
             {list.map((item) => {
                 return (
                     <Flex
-                        w='10rem'
-                        h='10rem'
+                        w={{
+                            base: '6rem',
+                            md: '8rem'
+                        }}
+                        h={{
+                            base: '6rem',
+                            md: '8rem'
+                        }}
                         borderRadius='20rem'
                         flexDir='column'
                         justifyContent='center'
@@ -28,14 +37,20 @@ export const Statistics = () => {
                         border='3px solid #6A2F99'
                     >
                         <Text
-                            fontSize='2rem'
+                            fontSize={{
+                                base: '1.6rem',
+                                md: '1.8rem'
+                            }}
                             fontWeight='bold'
                         >
                             {item.count}
                         </Text>
                         <Text
                             color='#A7A7A7'
-                            fontSize='.9rem'
+                            fontSize={{
+                                base: '.6rem',
+                                md: '.8rem'
+                            }}
                         >
                             {item.title}
                         </Text>

@@ -27,7 +27,13 @@ export const Hero = () => {
     return (
         <Flex
             id='hero'
-            h='100vh'
+            h={{
+                md: '100vh'
+            }}
+            paddingBlock={{
+                base: '10rem',
+                md: '0'
+            }}
             justifyContent='center'
             alignItems='center'
             ref={ref}
@@ -37,25 +43,48 @@ export const Hero = () => {
                 margin='auto'
                 justifyContent='space-between'
                 alignItems='center'
+                flexDir={{
+                    base: 'column',
+                    md: 'row'
+                }}
             >
                 {/* LEFT */}
                 <Flex
                     flexDir='column'
+                    alignItems={{
+                        base: 'center',
+                        md: 'start'
+                    }}
                 >
                     <Text
                         as='h5'
+                        textAlign={{
+                            base: 'center',
+                            md: 'start'
+                        }}
                     >
                         Hi, I am Sadiqur Sakib,
                     </Text>
                     <Text
                         as='h1'
+                        textAlign={{
+                            base: 'center',
+                            md: 'start'
+                        }}
                     >
                         Aspiring Developer.
                     </Text>
                     <Text
-                        width='70%'
+                        width={{
+                            base: '100%',
+                            md: '70%'
+                        }}
                         as='h5'
                         fontWeight='semibold'
+                        textAlign={{
+                            base: 'center',
+                            md: 'start'
+                        }}
                     >
                         CUNY Baruch College Undergraduate College Student Majoring In Computer Information Systems Located In New York City.
                     </Text>

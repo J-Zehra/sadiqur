@@ -23,7 +23,10 @@ export const Stepper = () => {
 
     return (
         <Flex
-            w='30rem'
+            w={{
+                base: '100%',
+                md: '30rem'
+            }}
             h='22rem'
             bg='#1A1A1A'
             pos='relative'
@@ -32,7 +35,9 @@ export const Stepper = () => {
             p='1.5rem 5rem'
             flexDir='column'
             gap='2rem'
-            flex={1}
+            flex={{
+                md: 1
+            }}
             borderRadius='.3rem'
         >
             <Flex

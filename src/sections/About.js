@@ -49,7 +49,12 @@ export const About = () => {
                     justifyContent='space-between'
                     alignItems='center'
                     width='100%'
+                    h='100%'
                     gap='5rem'
+                    flexDir={{
+                        base: 'column-reverse',
+                        md: 'row'
+                    }}
                 >
                     <Stepper />
                     <RightContents />
