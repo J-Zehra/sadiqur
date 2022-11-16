@@ -4,9 +4,9 @@ import React from 'react'
 export const Statistics = () => {
 
     const list = [
-        { title: 'Projects', count: 35 },
-        { title: 'Hours Coding', count: 892 },
-        { title: 'Hours Working', count: 350 },
+        { title: 'Projects', count: 42 },
+        { title: 'Hours Coding', count: '1300' },
+        { title: 'Hours Working', count: '910' },
     ]
 
     return (

@@ -2,7 +2,7 @@ import { Box, Flex, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
 import { CgEditBlackPoint } from 'react-icons/cg'
 
-export const First = () => {
+export const Third = () => {
     return (
         <>
             <Box>
@@ -10,16 +10,16 @@ export const First = () => {
                     fontSize='1.5rem'
                     fontWeight='bold'
                 >
-                    May 2020
+                    March 2021
                 </Text>
                 <Text
                     color='#9E9E9E'
                     fontWeight='semibold'
                 >
-                    Graduated from Francis Lewis High School
+                    Web-Development Boot Camp
                 </Text>
             </Box>
-            <VStack
+            <VStack 
                 spacing='1rem'
                 align='start'
             >
@@ -37,7 +37,7 @@ export const First = () => {
                         color='#9E9E9E'
                         fontWeight='normal'
                     >
-                        Focus on computer science and robotics
+                        Learned Full-Stack web development
                     </Text>
                 </Flex>
                 <Flex
@@ -54,7 +54,7 @@ export const First = () => {
                         color='#9E9E9E'
                         fontWeight='normal'
                     >
-                        Co-Founded Game Design and Development Club
+                        Started Developing Projects with newfound knowledge
                     </Text>
                 </Flex>
                 <Flex
@@ -71,7 +71,7 @@ export const First = () => {
                         color='#9E9E9E'
                         fontWeight='normal'
                     >
-                        Team Captain of  FTC & FRC Varsity Robotics Team
+                        Continuously learning to utilize new frameworks, libraries, languages, and software and implementing them into projects
                     </Text>
                 </Flex>
             </VStack>

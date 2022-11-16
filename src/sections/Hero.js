@@ -86,7 +86,7 @@ export const Hero = () => {
                             md: 'start'
                         }}
                     >
-                        CUNY Baruch College Undergraduate College Student Majoring In Computer Information Systems Located In New York City.
+                        CUNY Baruch College Undergraduate Student Majoring In Computer Information Systems Located In New York City.
                     </Text>
                     <HeroButton/>
                 </Flex>

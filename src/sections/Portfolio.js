@@ -5,14 +5,18 @@ import { SectionTitle } from '../components/SectionTitle';
 import { ApplicationContext } from '../context/AppContext';
 import { allBreakpoints } from '../miscellaneous/breakpoints';
 
-import Project1 from '../assets/projects/ASCEND.png'
-import Project2 from '../assets/projects/Candy.png'
-import Project3 from '../assets/projects/hack.png'
-import Project4 from '../assets/projects/Price.png'
-import Project5 from '../assets/projects/robotics.png'
-import Project6 from '../assets/projects/SadiqurFC_page.png'
-import Project7 from '../assets/projects/snake.png'
-import Project8 from '../assets/projects/West.png'
+import Project1 from '../assets/projects/SadiqurFC_page.png'
+import Project2 from '../assets/projects/krypt .png'
+import Project3 from '../assets/projects/ASCEND.png'
+import Project4 from '../assets/projects/AlanAI.jpeg'
+import Project5 from '../assets/projects/Portfolio.png'
+import Project6 from '../assets/projects/hack.png'
+import Project7 from '../assets/projects/Candy.png'
+import Project8 from '../assets/projects/Price.png'
+import Project9 from '../assets/projects/robotics.png'
+import Project10 from '../assets/projects/snake.png'
+
+
 
 export const Portfolio = () => {
 
@@ -33,14 +37,16 @@ export const Portfolio = () => {
     }, [isInView, setActiveNav])
 
     const projectList = [
-        { title: 'Ascend', image: Project1 },
-        { title: 'Candy', image: Project2 },
-        { title: 'Hack', image: Project3 },
-        { title: 'Price', image: Project4 },
-        { title: 'Robotics', image: Project5 },
-        { title: 'SadiqurFC_page', image: Project6 },
-        { title: 'Snake', image: Project7 },
-        { title: 'West', image: Project8 },
+        { title: 'Sadiqur’s Fitness Committee', image: Project1 },
+        { title: 'KRYPT', image: Project2 },
+        { title: 'ASCEND BARUCH', image: Project3 },
+        { title: 'ALAN AI VIRTUAL ASSISSTANT ', image: Project4 },
+        { title: 'PREVIOUS PORTFOLIO', image: Project5 },
+        { title: 'ASCEND HACKATHON', image: Project6 },
+        { title: 'MEUSEUM OF CANDY', image: Project7 },
+        { title: 'PRICE PANEL', image: Project8 },
+        { title: 'FTC ROBOTICS', image: Project9 },
+        { title: 'SNAKE GAME', image: Project10 },
     ]
 
     return (

@@ -2,7 +2,7 @@ import { Box, Flex, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
 import { CgEditBlackPoint } from 'react-icons/cg'
 
-export const First = () => {
+export const Second = () => {
     return (
         <>
             <Box>
@@ -10,16 +10,16 @@ export const First = () => {
                     fontSize='1.5rem'
                     fontWeight='bold'
                 >
-                    May 2020
+                    August 2020
                 </Text>
                 <Text
                     color='#9E9E9E'
                     fontWeight='semibold'
                 >
-                    Graduated from Francis Lewis High School
+                    Enrolled at CUNY Baruch College
                 </Text>
             </Box>
-            <VStack
+            <VStack 
                 spacing='1rem'
                 align='start'
             >
@@ -37,7 +37,7 @@ export const First = () => {
                         color='#9E9E9E'
                         fontWeight='normal'
                     >
-                        Focus on computer science and robotics
+                        Majoring in Computer Information Systems and Minor in Art Graphics Design
                     </Text>
                 </Flex>
                 <Flex
@@ -54,7 +54,7 @@ export const First = () => {
                         color='#9E9E9E'
                         fontWeight='normal'
                     >
-                        Co-Founded Game Design and Development Club
+                        Ascend Technology Committee Assistant Vice President
                     </Text>
                 </Flex>
                 <Flex
@@ -71,7 +71,7 @@ export const First = () => {
                         color='#9E9E9E'
                         fontWeight='normal'
                     >
-                        Team Captain of  FTC & FRC Varsity Robotics Team
+                        Taught Workshops in Web Design and Development
                     </Text>
                 </Flex>
             </VStack>

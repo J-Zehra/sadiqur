@@ -5,8 +5,14 @@ import { MdSchool } from 'react-icons/md'
 import { FaSchool } from 'react-icons/fa'
 import { AiFillCode } from 'react-icons/ai'
 import { FaGlobe } from 'react-icons/fa'
+import { FaLaptop } from 'react-icons/fa'
 import { BiLoaderCircle } from 'react-icons/bi'
 import { First } from './StepperContents/First'
+import { Second } from './StepperContents/Second'
+import { Third } from './StepperContents/Third'
+import { Fourth } from './StepperContents/Fourth'
+import { Sixth } from './StepperContents/Sixth'
+import { Fifth } from './StepperContents/Fifth'
 
 
 export const Stepper = () => {
@@ -15,10 +21,11 @@ export const Stepper = () => {
 
     const iconList = [
         { key: "icon1", icon: <MdSchool />, content: <First/> },
-        { key: "icon2", icon: <FaSchool /> },
-        { key: "icon3", icon: <AiFillCode /> },
-        { key: "icon4", icon: <FaGlobe /> },
-        { key: "icon5", icon: <BiLoaderCircle /> },
+        { key: "icon2", icon: <FaSchool />, content: <Second/> },
+        { key: "icon3", icon: <AiFillCode />, content: <Third/> },
+        { key: "icon4", icon: <FaGlobe />, content: <Fourth/>  },
+        { key: "icon4", icon: <FaLaptop />, content: <Fifth/>  },
+        { key: "icon5", icon: <BiLoaderCircle />, content: <Sixth/> },
     ]
 
     return (
@@ -27,14 +34,16 @@ export const Stepper = () => {
                 base: '100%',
                 md: '30rem'
             }}
-            h='22rem'
+            minH='25rem'
             bg='#1A1A1A'
+            transition='all .3s ease'
             pos='relative'
             justifyContent='start'
             alignItems='start'
-            p='1.5rem 5rem'
+            paddingBlock='1.5rem'
+            paddingInline='5rem 2rem'
             flexDir='column'
-            gap='2rem'
+            gap='2.5rem'
             flex={{
                 md: 1
             }}
@@ -68,7 +77,7 @@ export const Stepper = () => {
                             key={list.key}
                             w='2.5rem'
                             h='2.5rem'
-                            borderRadius='20rem'
+                            borderRadius='50rem'
                             bg={active === index ? '#AE3BD7' : '#1A1A1A'}
                             border={active !== index && '1px solid #8D8D8D'}
                             justifyContent='center'
