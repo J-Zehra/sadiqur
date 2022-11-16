@@ -88,7 +88,11 @@ export const SkillTab = () => {
                     <Wrap
                         justify='center'
                         spacing='2rem'
-                        w='50%'
+                        w={{
+                            base: '100%',
+                            md: '60%',
+                            lg:'50%'
+                        }}
                         p='2rem'
                     >
                         {frameworkList.map((framework) => {
@@ -118,7 +122,11 @@ export const SkillTab = () => {
                     <Wrap
                         justify='center'
                         spacing='2rem'
-                        w='50%'
+                        w={{
+                            base: '100%',
+                            md: '60%',
+                            lg:'50%'
+                        }}
                         p='2rem'
                     >
                         {languageList.map((framework) => {
@@ -148,7 +156,11 @@ export const SkillTab = () => {
                     <Wrap
                         justify='center'
                         spacing='2rem'
-                        w='50%'
+                        w={{
+                            base: '100%',
+                            md: '60%',
+                            lg:'50%'
+                        }}
                         p='2rem'
                     >
                         {softwareList.map((framework) => {

@@ -1,4 +1,4 @@
-import { AspectRatio, Button, Flex, Image, Text, Wrap, WrapItem } from '@chakra-ui/react'
+import { AspectRatio, Button, Flex, Image, Text, useDisclosure, Wrap, WrapItem } from '@chakra-ui/react'
 import { motion, useInView } from 'framer-motion';
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import { SectionTitle } from '../components/SectionTitle';
@@ -15,10 +15,13 @@ import Project7 from '../assets/projects/Candy.png'
 import Project8 from '../assets/projects/Price.png'
 import Project9 from '../assets/projects/robotics.png'
 import Project10 from '../assets/projects/snake.png'
-
+import { ProjectModal } from '../components/ProjectModal';
 
 
 export const Portfolio = () => {
+
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const [modalData, setModalData] = useState({});
 
     const [hovered, setHovered] = useState(-1)
 
@@ -39,16 +42,66 @@ export const Portfolio = () => {
     }, [isInView, setActiveNav])
 
     const projectList = [
-        { title: 'Sadiqur’s Fitness Committee', image: Project1 },
-        { title: 'KRYPT', image: Project2 },
-        { title: 'ASCEND BARUCH', image: Project3 },
-        { title: 'ALAN AI VIRTUAL ASSISSTANT ', image: Project4 },
-        { title: 'PREVIOUS PORTFOLIO', image: Project5 },
-        { title: 'ASCEND HACKATHON', image: Project6 },
-        { title: 'MEUSEUM OF CANDY', image: Project7 },
-        { title: 'PRICE PANEL', image: Project8 },
-        { title: 'FTC ROBOTICS', image: Project9 },
-        { title: 'SNAKE GAME', image: Project10 },
+        {
+            title: 'Sadiqur’s Fitness Committee',
+            image: Project1,
+            description: "Created a Fitness Webpage using React and Material UI that displays a variety of exercises for users. The application features gifs of how to perform the exercise, YouTube videos to get a better demonstrating or understanding of the exercise, ability to search any exercise or search what muscle the user wants to exercise is given a variety of exercise options for that muscle/muscle group.",
+            link: 'https://github.com/SadiqurS/gym_exercises'
+        },
+        {
+            title: 'KRYPT',
+            image: Project2,
+            description: 'Developed a modern Web 3.0 application for sending transactions through the blockchain using React and Solidity. It features metamask pairing, ability to send Ethereum through the blockchain network, stunning glassmorphism design, and a transactions history.',
+            link: 'https://github.com/SadiqurS/Krypt'
+        },
+        {
+            title: 'ASCEND BARUCH',
+            image: Project3,
+            description: "Utilized Wordpress and elementor to design and deploy Ascend Baruch's Website.",
+            link: 'https://ascendbaruch.org/'
+        },
+        { 
+            title: 'ALAN AI VIRTUAL ASSISSTANT ', 
+            image: Project4,
+            description: "Utilized Alan A.I software to develop a virtual speech recognition assistant React Application. The application has features such as providing users with news across thousands of different sources, provide users data and weather across all regions, hold simple conversations with the A.I, solve simple arithmetics, as well as translate words or phrases from multiple languages.", 
+            link: 'https://github.com/SadiqurS/Alan_Ai_Virtual_Assistant'
+        },
+        { 
+            title: 'PREVIOUS PORTFOLIO', 
+            image: Project5,
+            description: ': Previous portfolio created using vanilla JavaScript, HTML, CSS, and bootstrap. Features: Interactive animations, Live background, and full responsiveness across all devices',
+            link: 'https://github.com/SadiqurS/sadiqurS.github.io'
+        },
+        { 
+            title: 'ASCEND HACKATHON', 
+            image: Project6,
+            description: "Received first place for creating a portfolio website for Ascend Baruch’s annual hackathon. ",
+            link: 'https://ascendhackathonportfolio.netlify.app/'
+        },
+        { 
+            title: 'MEUSEUM OF CANDY', 
+            image: Project7,
+            description: "Utilized Bootstrap to create and design a responsive ad-like webpage",
+            link: 'https://museumofcandyproject.netlify.app/'
+        },
+        { 
+            title: 'PRICE PANEL', 
+            image: Project8,
+            description: "A simple responsive price panel design using media queries.",
+            link: 'https://prinepanelproject.netlify.app/'
+        },
+        { 
+            title: 'FTC ROBOTICS', 
+            image: Project9,
+            description: 'Utilized TensorFlow to implement machine learning features such as being able to recognize and detect patterns in pictures that enable autonomous functions.',
+            link: 'https://www.youtube.com/watch?v=ZZLolJPj2ag'
+        },
+        { 
+            title: 'SNAKE GAME', 
+            image: Project10,
+            description: "Utilized Processing to create a replica of the snake game for high school project",
+            link: 'https://github.com/SadiqurS/Snake_Game/blob/master/snake_game.pde'
+        },
     ]
 
     return (
@@ -59,7 +112,9 @@ export const Portfolio = () => {
             alignItems='center'
             ref={ref}
             bg='#181818'
+            pos='relative'
         >
+            <ProjectModal isOpen={isOpen} onClose={onClose} modalData={modalData} />
             <Flex
                 w={allBreakpoints}
                 margin='auto'
@@ -130,7 +185,7 @@ export const Portfolio = () => {
                                         animate={{
                                             opacity: 1,
                                             x: hovered === index ? 0 : '50vw',
-                                            transition:{
+                                            transition: {
                                                 duration: .5
                                             }
                                         }}
@@ -143,10 +198,14 @@ export const Portfolio = () => {
                                         color='white'
                                         bg='transparent'
                                         border='1px solid white'
+                                        onClick={() => {
+                                            onOpen()
+                                            setModalData(project)
+                                        }}
 
                                         _hover={{
                                             color: 'black',
-                                            bg:'white'
+                                            bg: 'white'
                                         }}
 
                                         as={motion.button}
@@ -157,7 +216,7 @@ export const Portfolio = () => {
                                         animate={{
                                             opacity: 1,
                                             x: hovered === index ? 0 : '-50vw',
-                                            transition:{
+                                            transition: {
                                                 duration: .3
                                             }
                                         }}
