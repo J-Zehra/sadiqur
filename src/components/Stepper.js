@@ -34,7 +34,7 @@ export const Stepper = () => {
                 base: '100%',
                 md: '30rem'
             }}
-            minH='25rem'
+            minH='30rem'
             bg='#1A1A1A'
             transition='all .3s ease'
             pos='relative'

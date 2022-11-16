@@ -1,5 +1,7 @@
-import { Box, Text } from '@chakra-ui/react'
+import { Box, Flex, Text } from '@chakra-ui/react'
 import React from 'react'
+import Lottie from 'react-lottie-player'
+import processing_animation from '../../assets/processing_animation.json'
 
 export const Sixth = () => {
     return (
@@ -18,14 +20,21 @@ export const Sixth = () => {
                     In Progress
                 </Text>
             </Box>
-            <Box>
-                <Text
-                    color='#9E9E9E'
-                    fontWeight='normal'
+            <Flex
+                w='100%'
+                justifyContent='center'
+                alignItems='center'
+            >
+                <Box
+                    w='20rem'
                 >
-                    - Maybe add something creative or something unique to this bullet point of the timeline
-                </Text>
-            </Box>
+                    <Lottie
+                        loop
+                        animationData={processing_animation}
+                        play
+                    />
+                </Box>
+            </Flex>
         </>
     )
 }
