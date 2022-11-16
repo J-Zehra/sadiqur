@@ -1,6 +1,6 @@
-import { AspectRatio, Box, Flex, Image, Wrap, WrapItem } from '@chakra-ui/react'
-import { useInView } from 'framer-motion';
-import React, { useContext, useEffect, useRef } from 'react'
+import { AspectRatio, Button, Flex, Image, Text, Wrap, WrapItem } from '@chakra-ui/react'
+import { motion, useInView } from 'framer-motion';
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { SectionTitle } from '../components/SectionTitle';
 import { ApplicationContext } from '../context/AppContext';
 import { allBreakpoints } from '../miscellaneous/breakpoints';
@@ -19,6 +19,8 @@ import Project10 from '../assets/projects/snake.png'
 
 
 export const Portfolio = () => {
+
+    const [hovered, setHovered] = useState(-1)
 
     // GET THE STATES FROM THE CONTEXT
     const { setActiveNav } = useContext(ApplicationContext)
@@ -72,11 +74,15 @@ export const Portfolio = () => {
                     justify='center'
                     spacing='1.5rem'
                 >
-                    {projectList.map((project) => {
+                    {projectList.map((project, index) => {
                         return (
                             <WrapItem
                                 pos='relative'
                                 borderRadius='.4rem'
+                                overflow='hidden'
+
+                                onMouseOver={() => setHovered(index)}
+                                onMouseOut={() => setHovered(-1)}
                             >
                                 <AspectRatio
                                     ratio={16 / 9}
@@ -93,25 +99,72 @@ export const Portfolio = () => {
                                     />
                                 </AspectRatio>
 
-                                <Box
+                                <Flex
                                     pos='absolute'
                                     w='100%'
                                     h='100%'
+                                    justifyContent='center'
+                                    alignItems='center'
+                                    flexDir='column'
+                                    gap='1.2rem'
                                     bg='#BB07FA'
-                                    top='0'
-                                    right='0'
-                                    left='0'
-                                    bottom='0'
                                     opacity='0'
-                                    transition='all .3s ease'
-                                    borderRadius='.4rem'
+                                    transition='all .5s ease'
 
                                     _hover={{
-                                        opacity: .6
+                                        opacity: .75
                                     }}
                                 >
+                                    <Text
+                                        fontWeight='black'
+                                        fontSize='1.5rem'
+                                        textAlign='center'
+                                        opacity='1'
+                                        w='100%'
 
-                                </Box>
+                                        as={motion.p}
+                                        initial={{
+                                            x: '50vw',
+                                            opacity: 0
+                                        }}
+                                        animate={{
+                                            opacity: 1,
+                                            x: hovered === index ? 0 : '50vw',
+                                            transition:{
+                                                duration: .5
+                                            }
+                                        }}
+                                    >
+                                        {project.title}
+                                    </Text>
+                                    <Button
+                                        fontWeight='bold'
+                                        fontSize='1rem'
+                                        color='white'
+                                        bg='transparent'
+                                        border='1px solid white'
+
+                                        _hover={{
+                                            color: 'black',
+                                            bg:'white'
+                                        }}
+
+                                        as={motion.button}
+                                        initial={{
+                                            x: '-50vw',
+                                            opacity: 0
+                                        }}
+                                        animate={{
+                                            opacity: 1,
+                                            x: hovered === index ? 0 : '-50vw',
+                                            transition:{
+                                                duration: .3
+                                            }
+                                        }}
+                                    >
+                                        Learn More
+                                    </Button>
+                                </Flex>
                             </WrapItem>
                         )
                     })}
