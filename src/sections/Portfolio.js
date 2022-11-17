@@ -5,7 +5,7 @@ import { SectionTitle } from '../components/SectionTitle';
 import { ApplicationContext } from '../context/AppContext';
 import { allBreakpoints } from '../miscellaneous/breakpoints';
 
-import Project1 from '../assets/projects/SadiqurFC_page.png'
+import Project1 from '../assets/projects/SadiqurFC_Page.png'
 import Project2 from '../assets/projects/krypt .png'
 import Project3 from '../assets/projects/ASCEND.png'
 import Project4 from '../assets/projects/AlanAI.jpeg'
