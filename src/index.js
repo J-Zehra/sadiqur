@@ -3,6 +3,7 @@ import React, { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { App } from './App';
 import { AppContext } from './context/AppContext';
+import './styles.css'
 
 import '@fontsource/nunito/400.css'
 import '@fontsource/nunito/500.css'
