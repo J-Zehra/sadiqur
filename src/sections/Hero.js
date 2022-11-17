@@ -7,7 +7,7 @@ import { allBreakpoints } from '../miscellaneous/breakpoints';
 import ProfilePic from '../assets/ProfilePic.png'
 import { container, item2 } from '../miscellaneous/motionVariants';
 
-import { TypeAnimation } from 'react-type-animation';
+import Typewriter from 'typewriter-effect'
 
 export const Hero = () => {
 
@@ -76,18 +76,26 @@ export const Hero = () => {
                         as={motion.h1}
                         variants={item2}
                     >
-                        <TypeAnimation
-                            sequence={[
-                                'Aspiring Developer.',
-                                3000,
-                                'Programmer',
-                                3000,
-                                'College Student',
-                                3000
-                            ]}
-                            speed={10}
-                            deletionSpeed={10}
-                            repeat={Infinity}
+                        <Typewriter
+                            onInit={(typewriter) => {
+                                typewriter
+                                    .typeString('Aspiring Developer.')
+                                    .pauseFor(2000)
+                                    .deleteAll()
+                                    .typeString('College Student.')
+                                    .pauseFor(2000)
+                                    .deleteAll()
+                                    .typeString('Web Developer.')
+                                    .pauseFor(2000)
+                                    .deleteAll()
+                                    .start();
+                            }}
+                            options={{
+                                autoStart: true,
+                                loop: true,
+                                cursor: '|',
+                                //cursorClassName:'cursor'
+                            }}
                         />
                     </Text>
                     <Text
