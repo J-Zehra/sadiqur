@@ -21,6 +21,8 @@ import { SiMicrosoftoffice } from 'react-icons/si'
 import { FaShopify } from 'react-icons/fa'
 import { SiAdobecreativecloud } from 'react-icons/si'
 import { SiTensorflow } from 'react-icons/si'
+import { motion } from 'framer-motion'
+import { container2, item4 } from '../miscellaneous/motionVariants'
 
 export const SkillTab = () => {
 
@@ -63,6 +65,7 @@ export const SkillTab = () => {
             w='100%'
             align='center'
             minH='20rem'
+            isLazy
         >
             <TabList>
                 {tabList.map((tab) => {
@@ -86,12 +89,18 @@ export const SkillTab = () => {
                     <Wrap
                         justify='center'
                         spacing='2rem'
+                        p='2rem'
                         w={{
                             base: '100%',
                             md: '60%',
                             lg:'50%'
                         }}
-                        p='2rem'
+
+                        as={motion.div}
+                        variants={container2}
+                        initial='hidden'
+                        whileInView='show'
+                        viewport={{ once: true }}
                     >
                         {frameworkList.map((framework) => {
                             return (
@@ -103,6 +112,9 @@ export const SkillTab = () => {
                                         borderRadius='20rem'
                                         bg='#181818'
                                         boxShadow='3px 3px 20px rgba(0, 0, 0, .5)'
+
+                                        as={motion.div}
+                                        variants={item4}
                                     >
                                         <Box
                                             fontSize='2.5rem'
@@ -126,6 +138,12 @@ export const SkillTab = () => {
                             lg:'50%'
                         }}
                         p='2rem'
+
+                        as={motion.div}
+                        variants={container2}
+                        initial='hidden'
+                        whileInView='show'
+                        viewport={{ once: true }}
                     >
                         {languageList.map((framework) => {
                             return (
@@ -137,6 +155,9 @@ export const SkillTab = () => {
                                         borderRadius='20rem'
                                         bg='#181818'
                                         boxShadow='3px 3px 20px rgba(0, 0, 0, .5)'
+
+                                        as={motion.div}
+                                        variants={item4}
                                     >
                                         <Box
                                             fontSize='2.5rem'
@@ -160,6 +181,12 @@ export const SkillTab = () => {
                             lg:'50%'
                         }}
                         p='2rem'
+
+                        as={motion.div}
+                        variants={container2}
+                        initial='hidden'
+                        whileInView='show'
+                        viewport={{ once: true }}
                     >
                         {softwareList.map((framework) => {
                             return (
@@ -171,6 +198,9 @@ export const SkillTab = () => {
                                         borderRadius='20rem'
                                         bg='#181818'
                                         boxShadow='3px 3px 20px rgba(0, 0, 0, .5)'
+                                    
+                                        as={motion.div}
+                                        variants={item4}
                                     >
                                         <Box
                                             fontSize='2.5rem'

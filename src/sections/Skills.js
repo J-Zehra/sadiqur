@@ -1,5 +1,5 @@
 import { Box, Flex, Text, Wrap, WrapItem } from '@chakra-ui/react'
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import React, { useContext, useEffect, useRef } from 'react'
 import { SectionTitle } from '../components/SectionTitle';
 import { ApplicationContext } from '../context/AppContext';
@@ -10,6 +10,7 @@ import { AiOutlineBulb } from 'react-icons/ai'
 import { FaRegHandPointer } from 'react-icons/fa'
 import { BiMobileVibration } from 'react-icons/bi'
 import { SkillTab } from '../components/SkillTab';
+import { container, item } from '../miscellaneous/motionVariants';
 
 export const Skills = () => {
 
@@ -58,6 +59,12 @@ export const Skills = () => {
                     w='100%'
                     justify='center'
                     spacing='3rem'
+
+                    as={motion.div}
+                    variants={container}
+                    initial='hidden'
+                    whileInView='show'
+                    viewport={{ once: true }}
                 >
                     {skillList.map((skill) => {
                         return (
@@ -68,6 +75,9 @@ export const Skills = () => {
                                     justifyContent='center'
                                     w='20rem'
                                     gap='1rem'
+
+                                    as={motion.div}
+                                    variants={item}
                                 >
                                     <Box
                                         fontSize='3rem'
@@ -96,8 +106,8 @@ export const Skills = () => {
                         )
                     })}
                 </Wrap>
-                
-                <SkillTab/>
+
+                <SkillTab />
 
             </Flex>
         </Flex>

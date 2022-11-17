@@ -30,10 +30,7 @@ export const RightContents = () => {
             <Text
                 width='100%'
                 fontWeight='semibold'
-                textAlign={{
-                    base: 'center',
-                    md: 'start'
-                }}
+                textAlign='end'
 
                 as={motion.h5}
                 variants={item3}

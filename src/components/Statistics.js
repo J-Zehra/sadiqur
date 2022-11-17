@@ -1,8 +1,9 @@
 import { Flex, Text } from '@chakra-ui/react'
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import React, { useRef } from 'react'
 
 import CountUp from 'react-countup'
+import { container, item as variantItem } from '../miscellaneous/motionVariants';
 
 export const Statistics = () => {
 
@@ -25,6 +26,13 @@ export const Statistics = () => {
                 base: '2rem',
                 md: '5rem'
             }}
+
+
+            as={motion.div}
+            variants={container}
+            initial='hidden'
+            whileInView='show'
+            viewport={{ once: true }}
         >
             {list.map((item) => {
                 return (
@@ -42,6 +50,9 @@ export const Statistics = () => {
                         justifyContent='center'
                         alignItems='center'
                         border='3px solid #6A2F99'
+
+                        as={motion.div}
+                        variants={variantItem}
                     >
                         <Text
                             fontSize={{

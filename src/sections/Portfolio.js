@@ -17,6 +17,7 @@ import Project9 from '../assets/projects/robotics.png'
 import Project10 from '../assets/projects/snake.png'
 import { ProjectModal } from '../components/ProjectModal';
 
+import { container, item } from '../miscellaneous/motionVariants'
 
 export const Portfolio = () => {
 
@@ -138,6 +139,12 @@ export const Portfolio = () => {
                 <Wrap
                     justify='center'
                     spacing='1.5rem'
+
+                    as={motion.div}
+                    variants={container}
+                    initial='hidden'
+                    whileInView='show'
+                    viewport={{ once: true }}
                 >
                     {projectList.map((project, index) => {
                         return (
@@ -148,6 +155,9 @@ export const Portfolio = () => {
 
                                 onMouseOver={() => setHovered(index)}
                                 onMouseOut={() => setHovered(-1)}
+
+                                as={motion.div}
+                                variants={item}
                             >
                                 <AspectRatio
                                     ratio={16 / 9}

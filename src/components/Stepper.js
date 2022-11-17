@@ -13,6 +13,7 @@ import { Third } from './StepperContents/Third'
 import { Fourth } from './StepperContents/Fourth'
 import { Sixth } from './StepperContents/Sixth'
 import { Fifth } from './StepperContents/Fifth'
+import { motion } from 'framer-motion'
 
 
 export const Stepper = () => {
@@ -20,12 +21,12 @@ export const Stepper = () => {
     const [active, setActive] = useState(0)
 
     const iconList = [
-        { key: "icon1", icon: <MdSchool />, content: <First/> },
-        { key: "icon2", icon: <FaSchool />, content: <Second/> },
-        { key: "icon3", icon: <AiFillCode />, content: <Third/> },
-        { key: "icon4", icon: <FaGlobe />, content: <Fourth/>  },
-        { key: "icon4", icon: <FaLaptop />, content: <Fifth/>  },
-        { key: "icon5", icon: <BiLoaderCircle />, content: <Sixth/> },
+        { key: "icon1", icon: <MdSchool />, content: <First /> },
+        { key: "icon2", icon: <FaSchool />, content: <Second /> },
+        { key: "icon3", icon: <AiFillCode />, content: <Third /> },
+        { key: "icon4", icon: <FaGlobe />, content: <Fourth /> },
+        { key: "icon4", icon: <FaLaptop />, content: <Fifth /> },
+        { key: "icon5", icon: <BiLoaderCircle />, content: <Sixth /> },
     ]
 
     return (
@@ -48,6 +49,17 @@ export const Stepper = () => {
                 md: 1
             }}
             borderRadius='.3rem'
+
+            as={motion.div}
+            initial={{
+                x: -50,
+                opacity: 0
+            }}
+            whileInView={{
+                x: 0,
+                opacity: 1
+            }}
+            viewport={{ once: true }}
         >
             <Flex
                 h='100%'
@@ -92,7 +104,7 @@ export const Stepper = () => {
                     )
                 })}
             </Flex>
-            { iconList[active].content }
+            {iconList[active].content}
         </Flex>
     )
 }
