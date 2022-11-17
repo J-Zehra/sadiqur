@@ -98,6 +98,7 @@ export const Stepper = () => {
                             color={active === index ? 'white' : '#8D8D8D'}
                             fontSize='1.1rem'
                             transition='all .2s ease'
+                            cursor='pointer'
                         >
                             {list.icon}
                         </Flex>

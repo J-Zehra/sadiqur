@@ -41,17 +41,21 @@ export const Sixth = () => {
                     opacity: 1,
                 }}
             >
-                <Box
+                <Flex
                     w='100%'
                     pos='absolute'
                     top='0'
+                    bottom='0'
+                    right='0'
+                    left='0'
+                    justifyContent='center'
                 >
                     <Lottie
                         loop
                         animationData={processing_animation}
                         play
                     />
-                </Box>
+                </Flex>
             </Flex>
         </>
     )

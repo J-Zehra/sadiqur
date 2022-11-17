@@ -14,7 +14,6 @@ export const AboutButton = () => {
             pos='relative'
             _active={{}}
             as='a'
-            href='#contact'
             leftIcon={
                 <Box
                     fontSize='3.5rem'
@@ -42,6 +41,7 @@ export const AboutButton = () => {
                 borderRadius: '20rem',
                 filter: 'blur(5px)'
             }}
+
         >
             <Text
                 bg='linear-gradient(to right, #C41DFF, #DC8AF9)'
