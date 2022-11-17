@@ -27,6 +27,9 @@ export const MenuContainer = () => {
             zIndex={2}
             flexDir='column'
             as={motion.div}
+            initial={{
+                x: '100%'
+            }}
             animate={{
                 x: toggled ? 0 : '100%',
                 opacity: toggled ? 1 : 0,

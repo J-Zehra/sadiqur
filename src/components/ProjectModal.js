@@ -61,7 +61,7 @@ export const ProjectModal = ({ isOpen, onClose, modalData }) => {
                         bg='#BB07FA'
                         _hover={{}}
                     >
-                        View Live
+                        { `View ${modalData.source}` }
                     </Button>
                 </ModalFooter>
             </ModalContent>

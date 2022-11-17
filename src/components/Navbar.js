@@ -6,7 +6,7 @@ import Logo from '../assets/Logo.png'
 import Logo2 from '../assets/logo2.png'
 import { MobileMenu } from './MobileMenu'
 import { motion } from 'framer-motion'
-import { item } from '../miscellaneous/motionVariants'
+import { container, item } from '../miscellaneous/motionVariants'
 import { allBreakpoints } from '../miscellaneous/breakpoints'
 
 export const Navbar = () => {
@@ -46,10 +46,17 @@ export const Navbar = () => {
                 margin='auto'
                 alignItems='center'
                 justifyContent='space-between'
+
+                as={motion.div}
+                variants={container}
+                initial='hidden'
+                animate='show'
             >
                 {/* LOGO */}
                 <Link
                     href='#hero'
+                    as={motion.a}
+                    variants={item}
                 >
                     <Image
                         transition='all .3s ease'

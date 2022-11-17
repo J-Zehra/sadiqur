@@ -12,7 +12,6 @@ import { AiFillHtml5 } from 'react-icons/ai'
 import { DiCss3 } from 'react-icons/di'
 import { FaSass } from 'react-icons/fa'
 import { DiJavascript } from 'react-icons/di'
-import { SiTypescript } from 'react-icons/si'
 import { FaPython } from 'react-icons/fa'
 
 import { DiVisualstudio } from 'react-icons/di'
@@ -45,7 +44,6 @@ export const SkillTab = () => {
         { title: 'CSS', icon: <DiCss3 /> },
         { title: 'SASS', icon: <FaSass /> },
         { title: 'Javascript', icon: <DiJavascript /> },
-        { title: 'Typescript', icon: <SiTypescript /> },
         { title: 'Python', icon: <FaPython /> },
     ]
 

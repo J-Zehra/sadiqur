@@ -1,4 +1,5 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 import React from 'react'
 import Lottie from 'react-lottie-player'
 import processing_animation from '../../assets/processing_animation.json'
@@ -6,7 +7,15 @@ import processing_animation from '../../assets/processing_animation.json'
 export const Sixth = () => {
     return (
         <>
-            <Box>
+            <Box
+                as={motion.div}
+                initial={{
+                    opacity: 0,
+                }}
+                animate={{
+                    opacity: 1,
+                }}
+            >
                 <Text
                     fontSize='1.5rem'
                     fontWeight='bold'
@@ -24,9 +33,18 @@ export const Sixth = () => {
                 w='100%'
                 justifyContent='center'
                 alignItems='center'
+                as={motion.div}
+                initial={{
+                    opacity: 0,
+                }}
+                animate={{
+                    opacity: 1,
+                }}
             >
                 <Box
-                    w='20rem'
+                    w='100%'
+                    pos='absolute'
+                    top='0'
                 >
                     <Lottie
                         loop

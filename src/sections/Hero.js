@@ -1,10 +1,13 @@
 import { Box, Flex, Image, Text } from '@chakra-ui/react'
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import React, { useContext, useEffect, useRef } from 'react'
 import { HeroButton } from '../components/HeroButton';
 import { ApplicationContext } from '../context/AppContext';
 import { allBreakpoints } from '../miscellaneous/breakpoints';
 import ProfilePic from '../assets/ProfilePic.png'
+import { container, item2 } from '../miscellaneous/motionVariants';
+
+import { TypeAnimation } from 'react-type-animation';
 
 export const Hero = () => {
 
@@ -27,6 +30,9 @@ export const Hero = () => {
     return (
         <Flex
             id='hero'
+            justifyContent='center'
+            alignItems='center'
+            ref={ref}
             h={{
                 md: '100vh'
             }}
@@ -34,9 +40,6 @@ export const Hero = () => {
                 base: '10rem',
                 md: '0'
             }}
-            justifyContent='center'
-            alignItems='center'
-            ref={ref}
         >
             <Flex
                 w={allBreakpoints}
@@ -47,53 +50,74 @@ export const Hero = () => {
                     base: 'column',
                     md: 'row'
                 }}
+                as={motion.div}
+                variants={container}
+                initial='hidden'
+                whileInView='show'
+                viewport={{ once: true }}
             >
                 {/* LEFT */}
                 <Flex
                     flexDir='column'
-                    alignItems={{
-                        base: 'center',
-                        md: 'start'
-                    }}
+                    alignItems='start'
                 >
                     <Text
-                        as='h5'
-                        textAlign={{
-                            base: 'center',
-                            md: 'start'
-                        }}
+                        textAlign='start'
+
+                        as={motion.h5}
+                        variants={item2}
+
                     >
                         Hi, I am Sadiqur Sakib,
                     </Text>
                     <Text
-                        as='h1'
-                        textAlign={{
-                            base: 'center',
-                            md: 'start'
-                        }}
+                        textAlign='start'
+
+                        as={motion.h1}
+                        variants={item2}
                     >
-                        Aspiring Developer.
+                        <TypeAnimation
+                            sequence={[
+                                'Aspiring Developer.',
+                                3000,
+                                'Programmer',
+                                3000,
+                                'College Student',
+                                3000
+                            ]}
+                            speed={10}
+                            deletionSpeed={10}
+                            repeat={Infinity}
+                        />
                     </Text>
                     <Text
+                        fontWeight='semibold'
+                        textAlign='start'
+                        fontSize='1.2rem'
                         width={{
                             base: '100%',
                             md: '70%'
                         }}
-                        as='h5'
-                        fontWeight='semibold'
-                        textAlign={{
-                            base: 'center',
-                            md: 'start'
-                        }}
+
+                        as={motion.h5}
+                        variants={item2}
                     >
                         CUNY Baruch College Undergraduate Student Majoring In Computer Information Systems Located In New York City.
                     </Text>
-                    <HeroButton/>
+                    <Box
+                        as={motion.div}
+                        variants={item2}
+                    >
+                        <HeroButton />
+                    </Box>
                 </Flex>
 
                 {/* RIGHT */}
-                <Box>
-                    <Image 
+                <Box
+                    as={motion.button}
+                    variants={item2}
+                >
+                    <Image
                         src={ProfilePic}
                         w='40rem'
                     />

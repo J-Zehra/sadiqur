@@ -1,11 +1,22 @@
 import { Box, Flex, Text, VStack } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 import React from 'react'
 import { CgEditBlackPoint } from 'react-icons/cg'
 
 export const Fifth = () => {
     return (
         <>
-            <Box>
+            <Box
+                as={motion.div}
+                initial={{
+                    opacity: 0,
+                    x: -50
+                }}
+                animate={{
+                    opacity: 1,
+                    x: 0,
+                }}
+            >
                 <Text
                     fontSize='1.5rem'
                     fontWeight='bold'
@@ -22,6 +33,16 @@ export const Fifth = () => {
             <VStack
                 spacing='1rem'
                 align='start'
+
+                as={motion.div}
+                initial={{
+                    opacity: 0,
+                    x: -50
+                }}
+                animate={{
+                    opacity: 1,
+                    x: 0,
+                }}
             >
                 <Flex
                     alignItems='start'

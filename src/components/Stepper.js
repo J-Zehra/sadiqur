@@ -85,6 +85,7 @@ export const Stepper = () => {
                             onClick={() => setActive(index)}
                             color={active === index ? 'white' : '#8D8D8D'}
                             fontSize='1.1rem'
+                            transition='all .2s ease'
                         >
                             {list.icon}
                         </Flex>
