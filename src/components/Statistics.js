@@ -1,15 +1,13 @@
 import { Flex, Text } from '@chakra-ui/react'
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import React, { useRef } from 'react'
 
-import CountUp from 'react-countup'
 import { container, item as variantItem } from '../miscellaneous/motionVariants';
 
 export const Statistics = () => {
 
     // SET THE REF FOR THE ELEMENT TO TRACK
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true })
 
     const list = [
         { title: 'Projects', count: 42 },
@@ -26,7 +24,6 @@ export const Statistics = () => {
                 base: '2rem',
                 md: '5rem'
             }}
-
 
             as={motion.div}
             variants={container}
@@ -62,15 +59,7 @@ export const Statistics = () => {
                             fontWeight='bold'
                             ref={ref}
                         >
-                            { isInView && (
-                                <CountUp
-                                    start={0}
-                                    end={item.count}
-                                    duration={2}
-                                    delay={0}
-                                />
-                            ) }
-
+                            {item.count}
                         </Text>
                         <Text
                             color='#A7A7A7'
