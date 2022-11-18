@@ -80,9 +80,9 @@ export const Skills = () => {
                                     variants={item}
                                 >
                                     <Box
-                                        fontSize='3rem'
+                                        fontSize='4rem'
                                         bg='#9604C8'
-                                        p='2rem'
+                                        p='3rem'
                                         borderRadius='20rem'
                                     >
                                         {skill.icon}

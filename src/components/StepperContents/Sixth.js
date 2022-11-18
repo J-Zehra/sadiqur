@@ -49,6 +49,8 @@ export const Sixth = () => {
                     right='0'
                     left='0'
                     justifyContent='center'
+
+                    transform='scale(1.6)'
                 >
                     <Lottie
                         loop

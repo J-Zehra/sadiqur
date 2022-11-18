@@ -1,4 +1,4 @@
-import { Flex } from '@chakra-ui/react'
+import { Flex, Link, Tooltip } from '@chakra-ui/react'
 import React from 'react'
 
 import { AiFillGithub } from 'react-icons/ai'
@@ -13,8 +13,28 @@ export const Socials = () => {
             fontSize='1.5rem'
             gap='2rem'
         >
-            <AiFillGithub/>
-            <AiFillLinkedin/>
+            <Tooltip
+                hasArrow
+                label='Github'
+            >
+                <Link
+                    target='_blank'
+                    href='https://github.com/sadiqurs'
+                >
+                    <AiFillGithub />
+                </Link>
+            </Tooltip>
+            <Tooltip
+                hasArrow
+                label='Linkedin'
+            >
+                <Link
+                    target='_blank'
+                    href='https://www.linkedin.com/mwlite/in/sadiqur-sakib-550106209'
+                >
+                    <AiFillLinkedin />
+                </Link>
+            </Tooltip>
         </Flex>
     )
 }

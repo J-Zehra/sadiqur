@@ -80,6 +80,23 @@ export const Fourth = () => {
                         Created a responsive interface using Bootstrap for company’s eCommerce website that served over 300+ users daily
                     </Text>
                 </Flex>
+                <Flex
+                    alignItems='start'
+                    justifyContent='start'
+                    gap='1rem'
+                >
+                    <Box
+                        fontSize='1.5rem'
+                    >
+                        <CgEditBlackPoint />
+                    </Box>
+                    <Text
+                        color='#9E9E9E'
+                        fontWeight='normal'
+                    >
+                        Designed stunning product detail pages and retextured images using Photoshop
+                    </Text>
+                </Flex>
             </VStack>
         </>
     )

@@ -9,7 +9,7 @@ export const ProjectModal = ({ isOpen, onClose, modalData }) => {
             isCentered
             motionPreset='slideInBottom'
             preserveScrollBarGap
-            size='xl'
+            size='4xl'
         >
             <ModalOverlay 
             />
@@ -21,7 +21,7 @@ export const ProjectModal = ({ isOpen, onClose, modalData }) => {
             >
                 <ModalHeader
                     color='palette.primary'
-                    fontWeight='bold'
+                    fontWeight='black'
                 >
                     {modalData.title}
                 </ModalHeader>
@@ -37,6 +37,7 @@ export const ProjectModal = ({ isOpen, onClose, modalData }) => {
                     </Box>
                     <Text
                         color='palette.primary'
+                        fontSize='1.1rem'
                     >
                         { modalData.description }
                     </Text>

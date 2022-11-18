@@ -1,4 +1,4 @@
-import { Box, Flex, Tab, TabList, TabPanel, TabPanels, Tabs, Wrap, WrapItem } from '@chakra-ui/react'
+import { Box, Flex, Tab, TabList, TabPanel, TabPanels, Tabs, Tooltip, Wrap, WrapItem } from '@chakra-ui/react'
 import React from 'react'
 
 import { FaReact } from 'react-icons/fa'
@@ -93,7 +93,7 @@ export const SkillTab = () => {
                         w={{
                             base: '100%',
                             md: '60%',
-                            lg:'50%'
+                            lg: '50%'
                         }}
 
                         as={motion.div}
@@ -105,24 +105,34 @@ export const SkillTab = () => {
                         {frameworkList.map((framework) => {
                             return (
                                 <WrapItem>
-                                    <Flex
-                                        justifyContent='center'
-                                        alignItems='center'
-                                        p='1.5rem'
-                                        borderRadius='20rem'
-                                        bg='#181818'
-                                        boxShadow='3px 3px 20px rgba(0, 0, 0, .5)'
-
-                                        as={motion.div}
-                                        variants={item4}
+                                    <Tooltip
+                                        hasArrow
+                                        label={framework.title}
+                                        borderRadius='.3rem'
+                                        p='.5rem 1rem'
                                     >
-                                        <Box
-                                            fontSize='2.5rem'
-                                            color='whitesmoke'
+                                        <Flex
+                                            justifyContent='center'
+                                            alignItems='center'
+                                            p='1.5rem'
+                                            borderRadius='20rem'
+                                            bg='#181818'
+                                            boxShadow='3px 3px 20px rgba(0, 0, 0, .5)'
+
+                                            as={motion.div}
+                                            variants={item4}
+                                            whileHover={{
+                                                scale: 1.1
+                                            }}
                                         >
-                                            {framework.icon}
-                                        </Box>
-                                    </Flex>
+                                            <Box
+                                                fontSize='2.5rem'
+                                                color='whitesmoke'
+                                            >
+                                                {framework.icon}
+                                            </Box>
+                                        </Flex>
+                                    </Tooltip>
                                 </WrapItem>
                             )
                         })}
@@ -135,7 +145,7 @@ export const SkillTab = () => {
                         w={{
                             base: '100%',
                             md: '60%',
-                            lg:'50%'
+                            lg: '50%'
                         }}
                         p='2rem'
 
@@ -145,27 +155,37 @@ export const SkillTab = () => {
                         whileInView='show'
                         viewport={{ once: true }}
                     >
-                        {languageList.map((framework) => {
+                        {languageList.map((language) => {
                             return (
                                 <WrapItem>
-                                    <Flex
-                                        justifyContent='center'
-                                        alignItems='center'
-                                        p='1.5rem'
-                                        borderRadius='20rem'
-                                        bg='#181818'
-                                        boxShadow='3px 3px 20px rgba(0, 0, 0, .5)'
-
-                                        as={motion.div}
-                                        variants={item4}
+                                    <Tooltip
+                                        hasArrow
+                                        label={language.title}
+                                        borderRadius='.3rem'
+                                        p='.5rem 1rem'
                                     >
-                                        <Box
-                                            fontSize='2.5rem'
-                                            color='whitesmoke'
+                                        <Flex
+                                            justifyContent='center'
+                                            alignItems='center'
+                                            p='1.5rem'
+                                            borderRadius='20rem'
+                                            bg='#181818'
+                                            boxShadow='3px 3px 20px rgba(0, 0, 0, .5)'
+
+                                            as={motion.div}
+                                            variants={item4}
+                                            whileHover={{
+                                                scale: 1.1
+                                            }}
                                         >
-                                            {framework.icon}
-                                        </Box>
-                                    </Flex>
+                                            <Box
+                                                fontSize='2.5rem'
+                                                color='whitesmoke'
+                                            >
+                                                {language.icon}
+                                            </Box>
+                                        </Flex>
+                                    </Tooltip>
                                 </WrapItem>
                             )
                         })}
@@ -178,7 +198,7 @@ export const SkillTab = () => {
                         w={{
                             base: '100%',
                             md: '60%',
-                            lg:'50%'
+                            lg: '50%'
                         }}
                         p='2rem'
 
@@ -188,27 +208,37 @@ export const SkillTab = () => {
                         whileInView='show'
                         viewport={{ once: true }}
                     >
-                        {softwareList.map((framework) => {
+                        {softwareList.map((software) => {
                             return (
                                 <WrapItem>
-                                    <Flex
-                                        justifyContent='center'
-                                        alignItems='center'
-                                        p='1.5rem'
-                                        borderRadius='20rem'
-                                        bg='#181818'
-                                        boxShadow='3px 3px 20px rgba(0, 0, 0, .5)'
-                                    
-                                        as={motion.div}
-                                        variants={item4}
+                                    <Tooltip
+                                        hasArrow
+                                        label={software.title}
+                                        borderRadius='.3rem'
+                                        p='.5rem 1rem'
                                     >
-                                        <Box
-                                            fontSize='2.5rem'
-                                            color='whitesmoke'
+                                        <Flex
+                                            justifyContent='center'
+                                            alignItems='center'
+                                            p='1.5rem'
+                                            borderRadius='20rem'
+                                            bg='#181818'
+                                            boxShadow='3px 3px 20px rgba(0, 0, 0, .5)'
+
+                                            as={motion.div}
+                                            variants={item4}
+                                            whileHover={{
+                                                scale: 1.1
+                                            }}
                                         >
-                                            {framework.icon}
-                                        </Box>
-                                    </Flex>
+                                            <Box
+                                                fontSize='2.5rem'
+                                                color='whitesmoke'
+                                            >
+                                                {software.icon}
+                                            </Box>
+                                        </Flex>
+                                    </Tooltip>
                                 </WrapItem>
                             )
                         })}
