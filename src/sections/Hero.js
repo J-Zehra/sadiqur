@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useRef } from 'react'
 import { HeroButton } from '../components/HeroButton';
 import { ApplicationContext } from '../context/AppContext';
 import { allBreakpoints } from '../miscellaneous/breakpoints';
-import ProfilePic from '../assets/ProfilePic.png'
+import ProfilePic from '../assets/ProfilePic.webp'
 import { container, item2 } from '../miscellaneous/motionVariants';
 
 import Typewriter from 'typewriter-effect'

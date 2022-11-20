@@ -5,16 +5,16 @@ import { SectionTitle } from '../components/SectionTitle';
 import { ApplicationContext } from '../context/AppContext';
 import { allBreakpoints } from '../miscellaneous/breakpoints';
 
-import Project1 from '../assets/projects/SadiqurFC_Page.png'
-import Project2 from '../assets/projects/krypt.png'
-import Project3 from '../assets/projects/ASCEND.png'
-import Project4 from '../assets/projects/AlanAI.jpeg'
-import Project5 from '../assets/projects/Portfolio.png'
-import Project6 from '../assets/projects/hack.png'
-import Project7 from '../assets/projects/Candy.png'
-import Project8 from '../assets/projects/Price.png'
-import Project9 from '../assets/projects/robotics.png'
-import Project10 from '../assets/projects/snake.png'
+import Project1 from '../assets/projects/SadiqurFC_Page.webp'
+import Project2 from '../assets/projects/krypt.webp'
+import Project3 from '../assets/projects/ASCEND.webp'
+import Project4 from '../assets/projects/AlanAI.webp'
+import Project5 from '../assets/projects/Portfolio.webp'
+import Project6 from '../assets/projects/hack.webp'
+import Project7 from '../assets/projects/Candy.webp'
+import Project8 from '../assets/projects/Price.webp'
+import Project9 from '../assets/projects/robotics.webp'
+import Project10 from '../assets/projects/snake.webp'
 import { ProjectModal } from '../components/ProjectModal';
 
 import { container, item } from '../miscellaneous/motionVariants'
