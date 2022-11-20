@@ -1,4 +1,4 @@
-import { AspectRatio, Button, Flex, Image, Text, useDisclosure, Wrap, WrapItem } from '@chakra-ui/react'
+import { Flex, useDisclosure, Wrap } from '@chakra-ui/react'
 import { motion, useInView } from 'framer-motion';
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import { SectionTitle } from '../components/SectionTitle';
@@ -17,14 +17,14 @@ import Project9 from '../assets/projects/robotics.webp'
 import Project10 from '../assets/projects/snake.webp'
 import { ProjectModal } from '../components/ProjectModal';
 
-import { container, item } from '../miscellaneous/motionVariants'
+import { container } from '../miscellaneous/motionVariants'
+import { ProjectCard } from '../components/ProjectCard';
 
 export const Portfolio = () => {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [modalData, setModalData] = useState({});
 
-    const [hovered, setHovered] = useState(-1)
 
     // GET THE STATES FROM THE CONTEXT
     const { setActiveNav } = useContext(ApplicationContext)
@@ -64,50 +64,50 @@ export const Portfolio = () => {
             link: 'https://ascendbaruch.org/',
             source: 'Live'
         },
-        { 
-            title: 'ALAN AI VIRTUAL ASSISSTANT ', 
+        {
+            title: 'ALAN AI VIRTUAL ASSISSTANT ',
             image: Project4,
-            description: "Utilized Alan A.I software to develop a virtual speech recognition assistant React Application. The application has features such as providing users with news across thousands of different sources, provide users data and weather across all regions, hold simple conversations with the A.I, solve simple arithmetics, as well as translate words or phrases from multiple languages.", 
+            description: "Utilized Alan A.I software to develop a virtual speech recognition assistant React Application. The application has features such as providing users with news across thousands of different sources, provide users data and weather across all regions, hold simple conversations with the A.I, solve simple arithmetics, as well as translate words or phrases from multiple languages.",
             link: 'https://github.com/SadiqurS/Alan_Ai_Virtual_Assistant',
             source: 'Github'
         },
-        { 
-            title: 'PREVIOUS PORTFOLIO', 
+        {
+            title: 'PREVIOUS PORTFOLIO',
             image: Project5,
             description: ': Previous portfolio created using vanilla JavaScript, HTML, CSS, and bootstrap. Features: Interactive animations, Live background, and full responsiveness across all devices',
             link: 'https://github.com/SadiqurS/sadiqurS.github.io',
             source: 'Github'
         },
-        { 
-            title: 'ASCEND HACKATHON', 
+        {
+            title: 'ASCEND HACKATHON',
             image: Project6,
             description: "Received first place for creating a portfolio website for Ascend Baruch’s annual hackathon. ",
             link: 'https://ascendhackathonportfolio.netlify.app/',
             source: 'Live'
         },
-        { 
-            title: 'MEUSEUM OF CANDY', 
+        {
+            title: 'MEUSEUM OF CANDY',
             image: Project7,
             description: "Utilized Bootstrap to create and design a responsive ad-like webpage",
             link: 'https://museumofcandyproject.netlify.app/',
             source: 'Live'
         },
-        { 
-            title: 'PRICE PANEL', 
+        {
+            title: 'PRICE PANEL',
             image: Project8,
             description: "A simple responsive price panel design using media queries.",
             link: 'https://prinepanelproject.netlify.app/',
             source: 'Live'
         },
-        { 
-            title: 'FTC ROBOTICS', 
+        {
+            title: 'FTC ROBOTICS',
             image: Project9,
             description: 'Utilized TensorFlow to implement machine learning features such as being able to recognize and detect patterns in pictures that enable autonomous functions.',
             link: 'https://www.youtube.com/watch?v=ZZLolJPj2ag',
             source: 'Youtube'
         },
-        { 
-            title: 'SNAKE GAME', 
+        {
+            title: 'SNAKE GAME',
             image: Project10,
             description: "Utilized Processing to create a replica of the snake game for high school project",
             link: 'https://github.com/SadiqurS/Snake_Game/blob/master/snake_game.pde',
@@ -148,105 +148,12 @@ export const Portfolio = () => {
                 >
                     {projectList.map((project, index) => {
                         return (
-                            <WrapItem
-                                pos='relative'
-                                borderRadius='.4rem'
-                                overflow='hidden'
-                                key={index}
-
-                                onMouseOver={() => setHovered(index)}
-                                onMouseOut={() => setHovered(-1)}
-
-                                as={motion.div}
-                                variants={item}
-                            >
-                                <AspectRatio
-                                    ratio={16 / 9}
-                                    w={{
-                                        base: '90vw',
-                                        md: '26rem'
-                                    }}
-                                >
-                                    <Image
-                                        src={project.image}
-                                        objectFit='cover'
-                                        w='100%'
-                                        borderRadius='.4rem'
-                                        alt={project.title}
-                                    />
-                                </AspectRatio>
-
-                                <Flex
-                                    pos='absolute'
-                                    w='100%'
-                                    h='100%'
-                                    justifyContent='center'
-                                    alignItems='center'
-                                    flexDir='column'
-                                    gap='1.2rem'
-                                    bg='#BB07FA'
-                                    opacity='0'
-                                    transition='all .5s ease'
-
-                                    _hover={{
-                                        opacity: .75
-                                    }}
-                                >
-                                    <Text
-                                        fontWeight='black'
-                                        fontSize='1.5rem'
-                                        textAlign='center'
-                                        opacity='1'
-                                        w='100%'
-
-                                        as={motion.p}
-                                        initial={{
-                                            x: '50vw',
-                                            opacity: 0
-                                        }}
-                                        animate={{
-                                            opacity: 1,
-                                            x: hovered === index ? 0 : '50vw',
-                                            transition: {
-                                                duration: .5
-                                            }
-                                        }}
-                                    >
-                                        {project.title}
-                                    </Text>
-                                    <Button
-                                        fontWeight='bold'
-                                        fontSize='1rem'
-                                        color='white'
-                                        bg='transparent'
-                                        border='1px solid white'
-                                        onClick={() => {
-                                            onOpen()
-                                            setModalData(project)
-                                        }}
-
-                                        _hover={{
-                                            color: 'black',
-                                            bg: 'white'
-                                        }}
-
-                                        as={motion.button}
-                                        initial={{
-                                            x: '-50vw',
-                                            opacity: 0
-                                        }}
-                                        animate={{
-                                            opacity: 1,
-                                            x: hovered === index ? 0 : '-50vw',
-                                            transition: {
-                                                duration: .3
-                                            }
-                                        }}
-                                    >
-                                        Learn More
-                                    </Button>
-                                </Flex>
-                            </WrapItem>
+                            <ProjectCard
+                                project={project}
+                                index={index}
+                                onOpen={onOpen}
+                                setModalData={setModalData}
+                            />
                         )
                     })}
                 </Wrap>

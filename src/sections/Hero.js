@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Text } from '@chakra-ui/react'
+import { Box, Flex, Text } from '@chakra-ui/react'
 import { motion, useInView } from 'framer-motion';
 import React, { useContext, useEffect, useRef } from 'react'
 import { HeroButton } from '../components/HeroButton';
@@ -8,6 +8,7 @@ import ProfilePic from '../assets/ProfilePic.webp'
 import { container, item2 } from '../miscellaneous/motionVariants';
 
 import Typewriter from 'typewriter-effect'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export const Hero = () => {
 
@@ -124,11 +125,11 @@ export const Hero = () => {
                 <Box
                     as={motion.button}
                     variants={item2}
+                    w='40rem'
+                    h='auto'
                 >
-                    <Image
+                    <LazyLoadImage
                         src={ProfilePic}
-                        w='40rem'
-                        h='auto'
                         alt='profile picture'
                     />
                 </Box>
