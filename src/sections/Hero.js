@@ -9,6 +9,7 @@ import { container, item2 } from '../miscellaneous/motionVariants';
 
 import Typewriter from 'typewriter-effect'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 export const Hero = () => {
 
@@ -131,6 +132,7 @@ export const Hero = () => {
                     <LazyLoadImage
                         src={ProfilePic}
                         alt='profile picture'
+                        effect='blur'
                     />
                 </Box>
             </Flex>

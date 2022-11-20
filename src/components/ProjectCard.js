@@ -33,11 +33,9 @@ export const ProjectCard = ({ project, index, onOpen, setModalData }) => {
                 <LazyLoadImage
                     effect='blur'
                     src={project.image}
-                    objectFit='cover'
-                    w='100%'
-                    borderRadius='.4rem'
+                    width='100%'
+                    height='15rem'
                     alt={project.title}
-
                 />
             </AspectRatio>
 
