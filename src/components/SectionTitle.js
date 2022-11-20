@@ -12,6 +12,7 @@ export const SectionTitle = ({ title }) => {
         >
             <Image
                 src={Border}
+                alt='border'
             />
             <Text
                 fontSize='1.2rem'
