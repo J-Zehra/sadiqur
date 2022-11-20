@@ -15,7 +15,6 @@ export const ProjectCard = ({ project, index, onOpen, setModalData }) => {
             pos='relative'
             borderRadius='.4rem'
             overflow='hidden'
-            key={index}
 
             onMouseOver={() => setHovered(index)}
             onMouseOut={() => setHovered(-1)}

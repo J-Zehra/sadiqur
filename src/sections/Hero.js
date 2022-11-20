@@ -126,7 +126,7 @@ export const Hero = () => {
                 <Box
                     as={motion.button}
                     variants={item2}
-                    w='40rem'
+                    maxW='35rem'
                     h='auto'
                 >
                     <LazyLoadImage

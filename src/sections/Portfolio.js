@@ -150,9 +150,9 @@ export const Portfolio = () => {
                         return (
                             <ProjectCard
                                 project={project}
-                                index={index}
                                 onOpen={onOpen}
                                 setModalData={setModalData}
+                                key={index}
                             />
                         )
                     })}
