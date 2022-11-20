@@ -128,6 +128,8 @@ export const Hero = () => {
                     <Image
                         src={ProfilePic}
                         w='40rem'
+                        h='auto'
+                        alt='profile picture'
                     />
                 </Box>
             </Flex>

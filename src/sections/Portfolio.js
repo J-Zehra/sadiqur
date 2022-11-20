@@ -152,6 +152,7 @@ export const Portfolio = () => {
                                 pos='relative'
                                 borderRadius='.4rem'
                                 overflow='hidden'
+                                key={index}
 
                                 onMouseOver={() => setHovered(index)}
                                 onMouseOut={() => setHovered(-1)}
@@ -171,6 +172,7 @@ export const Portfolio = () => {
                                         objectFit='cover'
                                         w='100%'
                                         borderRadius='.4rem'
+                                        alt={project.title}
                                     />
                                 </AspectRatio>
 

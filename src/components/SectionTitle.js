@@ -1,6 +1,6 @@
 import { Flex, Image, Text } from '@chakra-ui/react'
 import React from 'react'
-import Border from '../assets/Border.png'
+import Border from '../assets/Border2.svg'
 
 export const SectionTitle = ({ title }) => {
     return (

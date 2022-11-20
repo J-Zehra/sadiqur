@@ -11,7 +11,10 @@ export const RightContents = () => {
             flex={1}
             zIndex='1'
             justifyContent='center'
-            alignItems='end'
+            alignItems={{
+                base: 'center',
+                md: 'end'
+            }}
 
             as={motion.div}
             variants={container}
@@ -20,7 +23,10 @@ export const RightContents = () => {
             viewport={{ once: true }}
         >
             <Text
-                textAlign='end'
+                textAlign={{
+                    base: 'center',
+                    md: 'end'
+                }}
 
                 as={motion.h1}
                 variants={item3}
@@ -30,7 +36,10 @@ export const RightContents = () => {
             <Text
                 width='100%'
                 fontWeight='semibold'
-                textAlign='end'
+                textAlign={{
+                    base: 'center',
+                    md: 'end'
+                }}
 
                 as={motion.h5}
                 variants={item3}

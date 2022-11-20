@@ -38,13 +38,14 @@ export const MenuContainer = () => {
                 }
             }}
         >
-            {navLinks.map((item) => {
+            {navLinks.map((item, index) => {
                 return (
                     <Link
                         href={item.link}
                         onClick={() => setToggled(!toggled)}
                         color='palette.primary'
                         fontWeight='semibold'
+                        key={index}
                     >
                         {item.label}
                     </Link>

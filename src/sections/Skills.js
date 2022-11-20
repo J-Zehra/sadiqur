@@ -66,9 +66,9 @@ export const Skills = () => {
                     whileInView='show'
                     viewport={{ once: true }}
                 >
-                    {skillList.map((skill) => {
+                    {skillList.map((skill, index) => {
                         return (
-                            <WrapItem>
+                            <WrapItem key={index}>
                                 <Flex
                                     flexDir='column'
                                     alignItems='center'

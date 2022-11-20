@@ -68,9 +68,10 @@ export const SkillTab = () => {
             isLazy
         >
             <TabList>
-                {tabList.map((tab) => {
+                {tabList.map((tab, index) => {
                     return (
                         <Tab
+                            key={index}
                             color='#929292'
                             _selected={{
                                 color: 'white',
@@ -102,9 +103,9 @@ export const SkillTab = () => {
                         whileInView='show'
                         viewport={{ once: true }}
                     >
-                        {frameworkList.map((framework) => {
+                        {frameworkList.map((framework, index) => {
                             return (
-                                <WrapItem>
+                                <WrapItem key={index}>
                                     <Tooltip
                                         hasArrow
                                         label={framework.title}
@@ -155,9 +156,9 @@ export const SkillTab = () => {
                         whileInView='show'
                         viewport={{ once: true }}
                     >
-                        {languageList.map((language) => {
+                        {languageList.map((language, index) => {
                             return (
-                                <WrapItem>
+                                <WrapItem key={index}>
                                     <Tooltip
                                         hasArrow
                                         label={language.title}
@@ -208,9 +209,9 @@ export const SkillTab = () => {
                         whileInView='show'
                         viewport={{ once: true }}
                     >
-                        {softwareList.map((software) => {
+                        {softwareList.map((software, index) => {
                             return (
-                                <WrapItem>
+                                <WrapItem key={index}>
                                     <Tooltip
                                         hasArrow
                                         label={software.title}

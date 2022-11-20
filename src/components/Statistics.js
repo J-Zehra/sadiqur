@@ -34,7 +34,7 @@ export const Statistics = () => {
             whileInView='show'
             viewport={{ once: true }}
         >
-            {list.map((item) => {
+            {list.map((item, index) => {
                 return (
                     <Flex
                         w={{
@@ -50,6 +50,7 @@ export const Statistics = () => {
                         justifyContent='center'
                         alignItems='center'
                         border='3px solid #6A2F99'
+                        key={index}
 
                         as={motion.div}
                         variants={variantItem}

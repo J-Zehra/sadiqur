@@ -25,8 +25,8 @@ export const Stepper = () => {
         { key: "icon2", icon: <FaSchool />, content: <Second /> },
         { key: "icon3", icon: <AiFillCode />, content: <Third /> },
         { key: "icon4", icon: <FaGlobe />, content: <Fourth /> },
-        { key: "icon4", icon: <FaLaptop />, content: <Fifth /> },
-        { key: "icon5", icon: <BiLoaderCircle />, content: <Sixth /> },
+        { key: "icon5", icon: <FaLaptop />, content: <Fifth /> },
+        { key: "icon6", icon: <BiLoaderCircle />, content: <Sixth /> },
     ]
 
     return (
