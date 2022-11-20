@@ -62,6 +62,7 @@ export const Navbar = () => {
                         transition='all .3s ease'
                         w={scrolled ? '5.9rem' : '6rem'}
                         src={toggled ? Logo2 : Logo}
+                        alt='logo'
                     />
                 </Link>
 
