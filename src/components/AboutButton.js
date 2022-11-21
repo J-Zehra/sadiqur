@@ -1,6 +1,7 @@
 import { Box, Button, Text } from '@chakra-ui/react'
 import React from 'react'
 import { BiRightArrowCircle } from 'react-icons/bi'
+import Resume from '../assets/Sadiqur Sakib Resume.pdf'
 
 export const AboutButton = () => {
     return (
@@ -14,6 +15,8 @@ export const AboutButton = () => {
             pos='relative'
             _active={{}}
             as='a'
+            href={Resume}
+            target='_blank'
             leftIcon={
                 <Box
                     fontSize='3.5rem'
